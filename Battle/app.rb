@@ -1,4 +1,5 @@
 require 'sinatra'
+require_relative './lib/cat_name.rb'
 
 enable :sessions
 set :session_secret, "secret"
@@ -20,5 +21,6 @@ get '/secret3' do
 end
 
 get '/cat' do
+  @cat_name = CatName.new
   erb (:index)
 end
