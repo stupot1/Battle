@@ -1,5 +1,4 @@
 require 'sinatra'
-require_relative './lib/cat_name.rb'
 
 enable :sessions
 set :session_secret, "secret"
@@ -20,7 +19,12 @@ get '/secret3' do
   "Hello 3!"
 end
 
-get '/cat' do
-  @cat_name = CatName.new
+get '/random-cat' do
+  @name = ["Amigo", "Oscar", "Viking"].sample
+  erb (:index)
+end
+
+get '/named-cat' do
+  @name = params[:name]
   erb (:index)
 end
