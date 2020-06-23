@@ -7,11 +7,11 @@
   </style>
 </head>
 
-<h1>My name is <%=@name%></h1>
+<% if @name %>
 
-<p style="border:3px; border-style:dashed; border-color:#FF0000; padding: 1em;">
-  <img src=http://bit.ly/1eze8aE alt="Cat">
-</p>
+  <h1>My name is <%=@name%></h1>
+
+<% end %>
 
 <p class="borderexample">
   <img src=http://bit.ly/1eze8aE alt="Cat">
